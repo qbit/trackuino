@@ -39,8 +39,9 @@
 // - Cars:       9
 // - Home:       0
 // - IGate:      5
-#define S_CALLSIGN      "KB1WZE"
-#define S_CALLSIGN_ID   11
+#define S_CALLSIGN      "KD0WKW"
+#define S_CALLSIGN_ID   9
+#define S_SYMBOL 	'['
 
 // Destination callsign: APRS (with SSID=0) is usually okay.
 #define D_CALLSIGN      "APRS"
@@ -159,7 +160,7 @@
 
 // Type of buzzer (0=active, 1=passive). An active buzzer is driven by a
 // DC voltage. A passive buzzer needs a PWM signal.
-#define BUZZER_TYPE             0
+#define BUZZER_TYPE             1
 
 // When using a passive buzzer, specify the PWM frequency here. Choose one
 // that maximizes the volume according to the buzzer's datasheet. Not all
@@ -176,7 +177,7 @@
 // This option disables the buzzer above BUZZER_ALTITUDE meters. This is a
 // float value, so make it really high (eg. 1000000.0 = 1 million meters)
 // if you want it to never stop buzzing.
-#define BUZZER_ALTITUDE         3000.0  // meters (1 ft = 0.3048 m)
+#define BUZZER_ALTITUDE         0.0  // meters (1 ft = 0.3048 m)
 
 // The options here are pin 9 or 10
 #define BUZZER_PIN              9

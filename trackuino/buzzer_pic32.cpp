@@ -14,6 +14,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
+#ifdef BUZZER
 #ifdef PIC32MX
 
 #include "config.h"
@@ -102,3 +103,4 @@ extern "C" void __ISR (_TIMER_3_VECTOR, ipl5) T3_IntHandler (void)
 }
 
 #endif // #ifdef PIC32MX
+#endif // #ifdef BUZZER

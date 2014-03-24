@@ -43,7 +43,9 @@
 #include "afsk_avr.h"
 #include "afsk_pic32.h"
 #include "aprs.h"
+#ifdef BUZZER
 #include "buzzer.h"
+#endif
 #include "gps.h"
 #include "pin.h"
 #include "power.h"
@@ -81,8 +83,10 @@ void setup()
 Serial.println("RESET");
 #endif
 
+#ifdef BUZZER
   buzzer_setup();
   Serial.println("buzzer");
+#endif
   afsk_setup();
   Serial.println("afsk");
   gps_setup();
@@ -129,6 +133,7 @@ void get_pos()
       valid_pos = gps_decode(Serial.read());
   } while ( (millis() - timeout < VALID_POS_TIMEOUT) && ! valid_pos) ;
 
+#ifdef BUZZER
   if (valid_pos) {
     if (gps_altitude > BUZZER_ALTITUDE) {
       buzzer_off();   // In space, no one can hear you buzz
@@ -136,6 +141,7 @@ void get_pos()
       buzzer_on();
     }
   }
+#endif
 }
 
 void loop()

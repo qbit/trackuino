@@ -59,7 +59,11 @@ void aprs_send()
   ax25_send_string(gps_aprs_lat);     // Lat: 38deg and 22.20 min (.20 are NOT seconds, but 1/100th of minutes)
   ax25_send_byte('/');                // Symbol table
   ax25_send_string(gps_aprs_lon);     // Lon: 000deg and 25.80 min
+#ifdef BALLOON
   ax25_send_byte('O');                // Symbol: O=balloon, -=QTH
+#else
+  ax25_send_byte(S_SYMBOL);
+#endif
   snprintf(temp, 4, "%03d", (int)(gps_course + 0.5)); 
   ax25_send_string(temp);             // Course (degrees)
   ax25_send_byte('/');                // and
