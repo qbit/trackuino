@@ -54,10 +54,16 @@
 #define DIGI_PATH1      "WIDE2"
 #define DIGI_PATH1_TTL  1
 
+// Balloon: display balloon info or not.
+//#define BALLOON 1
+//
+// Buzzer: to buzz or not.
+//#define BUZZER 1
+
 // APRS comment: this goes in the comment portion of the APRS message. You
 // might want to keep this short. The longer the packet, the more vulnerable
 // it is to noise. 
-#define APRS_COMMENT    "Trackuino test"
+#define APRS_COMMENT    "!o/"
 
 
 // --------------------------------------------------------------------------
@@ -203,11 +209,11 @@
 // 3. When flashing the firmware, disconnect the GPS from the RX pin or you
 //    will get errors.
 
-// #define DEBUG_GPS    // GPS sentence dump and checksum validation
-// #define DEBUG_AX25   // AX.25 frame dump
-// #define DEBUG_MODEM  // Modem ISR overrun and profiling
-// #define DEBUG_RESET  // AVR reset
-// #define DEBUG_SENS   // Sensors
+#define DEBUG_GPS    // GPS sentence dump and checksum validation
+#define DEBUG_AX25   // AX.25 frame dump
+#define DEBUG_MODEM  // Modem ISR overrun and profiling
+#define DEBUG_RESET  // AVR reset
+#define DEBUG_SENS   // Sensors
 
 
 #endif
