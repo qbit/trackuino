@@ -156,6 +156,8 @@
 // Resistors divider for the voltage meter (ohms)
 #define VMETER_R1       10000
 #define VMETER_R2       3300
+//#define VMETER_R1	6810
+//#define VMETER_R2	2210
 
 // Voltage meter analog pin
 #define VMETER_PIN      2
@@ -166,7 +168,7 @@
 
 // Type of buzzer (0=active, 1=passive). An active buzzer is driven by a
 // DC voltage. A passive buzzer needs a PWM signal.
-#define BUZZER_TYPE             1
+#define BUZZER_TYPE             0
 
 // When using a passive buzzer, specify the PWM frequency here. Choose one
 // that maximizes the volume according to the buzzer's datasheet. Not all
@@ -209,11 +211,11 @@
 // 3. When flashing the firmware, disconnect the GPS from the RX pin or you
 //    will get errors.
 
-#define DEBUG_GPS    // GPS sentence dump and checksum validation
+//#define DEBUG_GPS    // GPS sentence dump and checksum validation
 #define DEBUG_AX25   // AX.25 frame dump
 #define DEBUG_MODEM  // Modem ISR overrun and profiling
-#define DEBUG_RESET  // AVR reset
-#define DEBUG_SENS   // Sensors
+//#define DEBUG_RESET  // AVR reset
+//#define DEBUG_SENS   // Sensors
 
 
 #endif

@@ -291,6 +291,9 @@ bool gps_decode(char c)
           gps_seconds = new_seconds;
           gps_lat = new_lat;
           gps_lon = new_lon;
+	  Serial.print(gps_lat);
+	  Serial.print(", ");
+	  Serial.println(gps_lon);
           strcpy(gps_aprs_lat, new_aprs_lat);
           strcpy(gps_aprs_lon, new_aprs_lon);
           gps_course = new_course;

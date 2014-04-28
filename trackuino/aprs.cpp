@@ -39,8 +39,11 @@ float meters_to_feet(float m)
 // Exported functions
 void aprs_send()
 {
+    Serial.print(gps_aprs_lat);
+    Serial.print(", ");
+    Serial.println(gps_aprs_lon);
   char temp[12];                   // Temperature (int/ext)
-  const struct s_address addresses[] = { 
+  const struct s_address addresses[] = {
     {D_CALLSIGN, D_CALLSIGN_ID},  // Destination callsign
     {S_CALLSIGN, S_CALLSIGN_ID},  // Source callsign (-11 = balloon, -9 = car)
 #ifdef DIGI_PATH1
@@ -64,7 +67,7 @@ void aprs_send()
 #else
   ax25_send_byte(S_SYMBOL);
 #endif
-  snprintf(temp, 4, "%03d", (int)(gps_course + 0.5)); 
+  snprintf(temp, 4, "%03d", (int)(gps_course + 0.5));
   ax25_send_string(temp);             // Course (degrees)
   ax25_send_byte('/');                // and
   snprintf(temp, 4, "%03d", (int)(gps_speed + 0.5));
